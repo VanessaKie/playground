@@ -6,13 +6,13 @@ const counterReducer = (state = 0, action) => {
             return state + 1;
         
         case 'Decrement':
-            return state - 1;
+            return state  && state - 1;
         
         case 'Reset':
             return state = 0;
         
-           /*  default: 
-            alert('please press a Button');  */
+           default: 
+            return state;
     }
 }
 
