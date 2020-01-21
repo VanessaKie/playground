@@ -1,30 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, reset } from './Config/Action';
-
-
-const App = () => {
-
-  const counter = useSelector(state => state)
-  const dispatch = useDispatch();
-    return (
-      <div className="App">
-        <div className='result'>{counter}</div>
-        <div className='alternate'>
-          <button type='button' className='add' onClick={() => dispatch(increment())} value='+'>+</button>
-          <button type='button' className='min' onClick={() => dispatch(decrement())} value='-'>-</button>
-        </div>
-        <div className='reset'>
-          <button className='reset-btn' type='button' onClick={() => dispatch(reset())} value='reset'>RESET</button>
-        </div>
-      </div>
-    );
-
-}
-
-/* class App extends React.Component {
+class Counter extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -63,13 +40,11 @@ const App = () => {
   }
 
   render () {
-      const counter = useSelector(state => state)
-      const dispatch = useDispatch();
     return (
       <div className="App">
-        <div className='result'>{counter}</div>
+        <div className='result'>{this.state.counter}</div>
         <div className='alternate'>
-          <button type='button' className='add' onClick={() => dispatch(increment())} value='+'>+</button>
+          <button type='button' className='add' onClick={this.handleClick} value='+'>+</button>
           <button type='button' className='min' onClick={this.handleClick} value='-'>-</button>
         </div>
         <div className='reset'>
@@ -79,8 +54,6 @@ const App = () => {
     );
   }
   
-} */
+}
 
-
-
-export default App;
+export default Counter;
